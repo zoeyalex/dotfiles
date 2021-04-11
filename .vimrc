@@ -34,5 +34,3 @@ autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellesca
 
 "removes all trailing whitespaces on save
 autocmd BufWritePre * %s/\s\+$//e
-
-
