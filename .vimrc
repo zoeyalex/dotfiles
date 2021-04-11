@@ -10,6 +10,12 @@ colorscheme ice_cold
 
 syntax on
 
+"splits open at the bottom and right
+set splitbelow splitright
+
+"show key presses
+set showcmd
+
 set nu rnu
 
 filetype plugin indent on
@@ -23,4 +29,5 @@ autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellesca
 "auto reload whenever file changes on disk
 set autoread
 
+"gives the ability to move your cursor with a mouse
 set mouse=a
