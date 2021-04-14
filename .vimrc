@@ -3,10 +3,11 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree'
 Plug 'vimsence/vimsence'
+Plug 'dracula/vim', {'as': 'dracula'}
 Plug 'vim-airline/vim-airline'
 call plug#end()
 
-colorscheme ice_cold
+colorscheme dracula
 
 syntax on
 
