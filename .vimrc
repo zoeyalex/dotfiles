@@ -17,7 +17,7 @@ set splitbelow splitright
 "shows key presses
 set showcmd
 
-set nu rnu
+set nu
 
 filetype plugin indent on
 
