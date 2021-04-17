@@ -94,13 +94,13 @@ fi
 
 unset use_color safe_term match_lhs sh
 
-alias cp="cp -i"                          # confirm before overwriting something
+alias m='python Desktop/curses\ file\ manager/__init__.py'
+alias cp="cp -ivr"                        # confirm before overwriting something
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
 alias rm='rm -I'
-alias cp='cp -r'
 
 xhost +local:root > /dev/null 2>&1
 
@@ -146,16 +146,16 @@ ex ()
 
 v ()
 {
-  if [ -z $1 ] 
+  if [ -z $1 ]
   then
 	  return
   fi
 
-  file=$(locate $1 | fzf) 
-  
+  file=$(locate $1 | fzf)
+
   if [ -z $file ]
   then
-	  return 	  
+	  return
   fi
   vim $file
 }
