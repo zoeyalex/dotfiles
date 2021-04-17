@@ -22,6 +22,7 @@ set showcmd
 "show line numbers
 set nu
 
+"set filetype, filetype plugin and filetype indent on
 filetype plugin indent on
 
 "statusline always active
