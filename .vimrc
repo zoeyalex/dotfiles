@@ -19,10 +19,12 @@ set splitbelow splitright
 "shows key presses
 set showcmd
 
+# show line numbers
 set nu
 
 filetype plugin indent on
 
+# statusline always active
 set laststatus=2
 
 "auto reload whenever file changes on disk
