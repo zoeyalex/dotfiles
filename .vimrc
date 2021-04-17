@@ -1,4 +1,4 @@
-" package manager
+"package manager
 call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree'
@@ -19,12 +19,12 @@ set splitbelow splitright
 "shows key presses
 set showcmd
 
-# show line numbers
+"show line numbers
 set nu
 
 filetype plugin indent on
 
-# statusline always active
+"statusline always active
 set laststatus=2
 
 "auto reload whenever file changes on disk
