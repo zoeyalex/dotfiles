@@ -144,6 +144,7 @@ ex ()
   fi
 }
 
+# lets you search for files and open them with vim | uses fzf
 v ()
 {
   if [ -z $1 ]

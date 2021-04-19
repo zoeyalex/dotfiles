@@ -13,6 +13,9 @@ colorscheme dracula
 
 syntax on
 
+"change bg color to terminal 0
+highlight Normal ctermbg=0
+
 "splits open at the bottom and right
 set splitbelow splitright
 
