@@ -9,8 +9,10 @@ Plug 'davidhalter/jedi-vim'
 Plug 'nvie/vim-flake8'
 call plug#end()
 
+"colorscheme
 colorscheme dracula
 
+"syntax highlight
 syntax on
 
 "ignore case
@@ -34,14 +36,17 @@ filetype plugin indent on
 "statusline always active
 set laststatus=2
 
-"replace all occurences on S
-nnoremap S :%s//g<Left><Left>
-
 "auto reload whenever file changes on disk
 set autoread
 
 "gives the ability to move your cursor with a mouse
 set mouse=a
+
+"replace all occurences on S
+nnoremap S :%s//g<Left><Left>
+
+"double caps/esc to quit highlight mode
+nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 
 "runs python on F9
 autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
