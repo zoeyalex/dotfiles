@@ -31,6 +31,9 @@ filetype plugin indent on
 "statusline always active
 set laststatus=2
 
+"replace all occurences on S
+nnoremap S :%s//g<Left><Left>
+
 "auto reload whenever file changes on disk
 set autoread
 
