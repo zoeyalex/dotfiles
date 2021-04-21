@@ -18,6 +18,9 @@ syntax on
 "ignore case
 set ic
 
+"highlight search results
+set hlsearch
+
 "change bg color to terminal 0
 highlight Normal ctermbg=0
 
