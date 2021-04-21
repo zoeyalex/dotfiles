@@ -13,6 +13,9 @@ colorscheme dracula
 
 syntax on
 
+"ignore case
+set ic
+
 "change bg color to terminal 0
 highlight Normal ctermbg=0
 
