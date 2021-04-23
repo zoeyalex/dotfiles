@@ -6,7 +6,6 @@ Plug 'vimsence/vimsence'
 Plug 'dracula/vim', {'as': 'dracula'}
 Plug 'vim-airline/vim-airline'
 Plug 'davidhalter/jedi-vim'
-Plug 'nvie/vim-flake8'
 call plug#end()
 
 "colorscheme
