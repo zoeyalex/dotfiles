@@ -1,3 +1,6 @@
+"
+"~/.vimrc
+"
 "package manager
 call plug#begin()
 Plug 'tpope/vim-sensible'
