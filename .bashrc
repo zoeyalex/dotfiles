@@ -94,7 +94,7 @@ fi
 
 unset use_color safe_term match_lhs sh
 
-alias m='python ~/Desktop/curses-file-manager/__init__.py'
+alias m='python ~/Desktop/curses-file-manager/src/__init__.py'
 alias cp="cp -ivr"                        # confirm before overwriting something
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
