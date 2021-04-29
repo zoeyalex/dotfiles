@@ -14,11 +14,35 @@ call plug#end()
 "colorscheme
 colorscheme dracula
 
-"syntax highlight
+"basic syntax highlight
 syntax on
+
+"disable line wrapping
+set nowrap
+
+"always displays sign column
+set signcolumn=yes
+
+"makes cmd bigger to avoid hit-enter prompts
+set cmdheight=2
+
+" disable defualt mode indication
+set noshowmode
+
+"no swap files
+set noswapfile
+
+"longer update time leads to noticeable delays
+set updatetime=50
+
+"show search results in search mode
+set is
 
 "ignore case
 set ic
+
+"smartcase overrides ingore case when search contains a capital letter
+set scs
 
 "highlight search results
 set hlsearch
