@@ -3,12 +3,20 @@
 "
 "package manager
 call plug#begin()
+"better defaults
 Plug 'tpope/vim-sensible'
+"file manager
 Plug 'scrooloose/nerdtree'
+"rich presence
 Plug 'vimsence/vimsence'
+"dracula theme
 Plug 'dracula/vim', {'as': 'dracula'}
+"statusline
 Plug 'vim-airline/vim-airline'
+"python autocomplete
 Plug 'davidhalter/jedi-vim'
+"flake8 on F7
+Plug 'nvie/vim-flake8'
 call plug#end()
 
 "colorscheme
@@ -71,15 +79,15 @@ set autoread
 "gives the ability to move your cursor with a mouse
 set mouse=a
 
+"set leader to space
+nnoremap <SPACE> <Nop>
+let mapleader=" "
+
 "replace all occurences on S
 nnoremap S :%s//g<Left><Left>
 
 "double caps/esc to quit highlight mode
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
-
-"runs python on F9
-autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
-autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 
 "removes all trailing whitespaces on save
 autocmd BufWritePre * %s/\s\+$//e
