@@ -1,6 +1,7 @@
 "
 "~/.vimrc
 "
+let $RC="$HOME/.vimrc"
 "package manager
 call plug#begin()
 "better defaults
