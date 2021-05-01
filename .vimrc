@@ -1,7 +1,6 @@
 "
 "~/.vimrc
 "
-let $RC="$HOME/.vimrc"
 "package manager
 call plug#begin()
 "better defaults
@@ -19,6 +18,8 @@ Plug 'davidhalter/jedi-vim'
 "flake8 on F7
 Plug 'nvie/vim-flake8'
 call plug#end()
+
+let $RC="$HOME/.vimrc"
 
 "colorscheme
 colorscheme dracula
