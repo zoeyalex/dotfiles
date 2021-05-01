@@ -1,4 +1,11 @@
 #!/bin/sh
 set -e
 script_path=$(dirname $(readlink -f $0))
-cp -iv $script_path/".bashrc" $script_path/".vimrc" ~
+if  diff -bq ~/.bashrc $script_path/.bashrc | grep -q "differ" ; then
+	echo -e "\n\033[0;33m.bashrc differs"
+	cp -iv $script_path/.bashrc ~
+fi
+if  diff -bq ~/.vimrc $script_path/.vimrc | grep -q "differ" ; then
+	echo -e "\n\033[0;32m.vimrc differs"
+	cp -iv $script_path/.vimrc ~
+fi
