@@ -35,6 +35,15 @@ set guioptions-=T
 "remove scrollar
 set guioptions-=r
 
+"show tabs as 4 spaces
+set tabstop=4
+
+"when indenting with < > use 4 spaces
+set shiftwidth=4
+
+"insert 4 spaces when you press tab
+set expandtab
+
 "ability to copy to the system clipbord using the + register
 set clipboard=unnamedplus
 
