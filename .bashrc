@@ -72,7 +72,7 @@ if ${use_color} ; then
 		PS1='\[\033[01;31m\][\h\[\033[01;36m\] \W\[\033[01;31m\]]\$\[\033[00m\] '
 	else
 
-		PS1='\[\033[01;32m\][\u@alex \[\033[01;33m\]${PWD}\[\033[01;32m\]]\[\033[01;32m\]\$\[\033[00m\] '
+		PS1="\[\033[01;38;5;146m\][\u@alex \[\033[01;37m\]\W\[\033[01;38;5;146m\]]\[\033[01;38;5;146m\]\$\[\033[00m\] "
 	fi
 
 	alias grep='grep --colour=auto'
@@ -91,13 +91,15 @@ unset use_color safe_term match_lhs sh
 
 alias m='python ~/Desktop/curses-file-manager/src/__init__.py'
 alias cp='cp -ivr'                        # confirm before overwriting something
+alias diff='diff --color=auto'		  # add colors
 alias ls='ls -h --color=auto'		  # human-readable sizes
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
-alias rm='rm -I'
-alias cat='lolcat'
+alias rm='rm -I'			  # prompt once before removing
+alias f='pcmanfm'			  # gui file browser
+alias vim='gvim'			  # gvim is better overall
 
 xhost +local:root > /dev/null 2>&1
 
@@ -157,4 +159,3 @@ v ()
   fi
   vim $file
 }
-
