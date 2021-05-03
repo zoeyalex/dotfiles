@@ -11,5 +11,5 @@ if  diff -bq ~/.vimrc $script_path/.vimrc | grep -q "differ" ; then
 fi
 if diff -bq ~/.xinitrc $script_path/.xinitrc | grep -q "differ" ; then
 	echo -e "\n\033[0;31m.xinitrc differs"
-	cp -v $script_path/.xinitrc ~
+	cp -iv $script_path/.xinitrc ~
 fi
