@@ -9,23 +9,34 @@ Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree'
 "rich presence
 Plug 'vimsence/vimsence'
-"dracula theme
-Plug 'dracula/vim', {'as': 'dracula'}
+"nord theme
+Plug 'arcticicestudio/nord-vim'
 "statusline
 Plug 'vim-airline/vim-airline'
-"python autocomplete
-Plug 'davidhalter/jedi-vim'
-"flake8 on F7
-Plug 'nvie/vim-flake8'
 call plug#end()
 
 let $RC="$HOME/.vimrc"
 
 "colorscheme
-colorscheme dracula
+colorscheme nord
 
 "basic syntax highlight
 syntax on
+
+"change font
+set guifont=Consolas\ 14
+
+"remove menubar
+set guioptions-=m
+
+"remove toolbar
+set guioptions-=T
+
+"remove scrollar
+set guioptions-=r
+
+"ability to copy to the system clipbord using the + register
+set clipboard=unnamedplus
 
 "disable line wrapping
 set nowrap
@@ -56,9 +67,6 @@ set scs
 
 "highlight search results
 set hlsearch
-
-"change bg color to terminal 0
-highlight Normal ctermbg=0
 
 "splits open at the bottom and right
 set splitbelow splitright
