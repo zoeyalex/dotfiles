@@ -7,18 +7,15 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 "file manager
 Plug 'scrooloose/nerdtree'
-"rich presence
-Plug 'vimsence/vimsence'
-"nord theme
-Plug 'arcticicestudio/nord-vim'
-"statusline
-Plug 'vim-airline/vim-airline'
+"base theme
+Plug 'AlessandroYorba/Arcadia'
 call plug#end()
 
 let $RC="$HOME/.vimrc"
 
 "colorscheme
-colorscheme nord
+let g:arcadia_Midnight=1
+colorscheme arcadia
 
 "basic syntax highlight
 syntax on
@@ -55,9 +52,6 @@ set signcolumn=yes
 
 "makes cmd bigger to avoid hit-enter prompts
 set cmdheight=2
-
-" disable defualt mode indication
-set noshowmode
 
 "no swap files
 set noswapfile
