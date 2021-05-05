@@ -9,6 +9,8 @@ Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree'
 "vim css colors
 Plug 'ap/vim-css-color'
+"flake8 on F7
+Plug 'nvie/vim-flake8'
 call plug#end()
 
 let $RC="$HOME/.vimrc"
