@@ -91,16 +91,17 @@ unset use_color safe_term match_lhs sh
 
 alias m='python ~/curses-file-manager/src/__init__.py'
 alias cp='cp -ivr'                        # confirm before overwriting something
-alias diff='diff --color=auto'		  # add colors
-alias ls='ls -h --color=auto'		  # human-readable sizes
+alias diff='diff --color=auto'		      # add colors
+alias ls='ls -h --color=auto'		      # human-readable sizes
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
-alias rm='rm -I'			  # prompt once before removing
-alias f='pcmanfm'			  # gui file browser
-alias vim='gvim'			  # gvim is better overall
-alias md='ghostwriter'        # markdown editor
+alias rm='rm -I'			              # prompt once before removing
+alias f='pcmanfm'			              # gui file browser
+alias vim='gvim'			              # gvim is better overall
+alias md='ghostwriter'                    # markdown editor
+export PATH="$HOME/.local/bin:$PATH"      # add /.local/bin to path
 
 xhost +local:root > /dev/null 2>&1
 
