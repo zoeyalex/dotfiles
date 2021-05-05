@@ -100,6 +100,7 @@ alias more=less
 alias rm='rm -I'			  # prompt once before removing
 alias f='pcmanfm'			  # gui file browser
 alias vim='gvim'			  # gvim is better overall
+alias md='ghostwriter'        # markdown editor
 
 xhost +local:root > /dev/null 2>&1
 
