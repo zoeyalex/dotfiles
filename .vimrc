@@ -9,6 +9,8 @@ Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree'
 "base theme
 Plug 'AlessandroYorba/Arcadia'
+"vim css colors
+Plug 'ap/vim-css-color'
 call plug#end()
 
 let $RC="$HOME/.vimrc"
@@ -31,6 +33,8 @@ set guioptions-=T
 
 "remove scrollar
 set guioptions-=r
+set guioptions-=l
+set guioptions-=b
 
 "show tabs as 4 spaces
 set tabstop=4
