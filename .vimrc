@@ -7,8 +7,6 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 "file manager
 Plug 'scrooloose/nerdtree'
-"base theme
-Plug 'AlessandroYorba/Arcadia'
 "vim css colors
 Plug 'ap/vim-css-color'
 call plug#end()
@@ -16,8 +14,7 @@ call plug#end()
 let $RC="$HOME/.vimrc"
 
 "colorscheme
-let g:arcadia_Midnight=1
-colorscheme arcadia
+colorscheme space
 
 "basic syntax highlight
 syntax on
