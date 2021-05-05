@@ -15,7 +15,7 @@ setxkbmap -option caps:escape
 #update clock every minute
 while true
 do
-    xsetroot -name "$( date +"%F %R" )"
+    xsetroot -name "$( date +"%A %d-%m-%Y %R" )"
     sleep 1m    # Update time every minute
 done &
 
