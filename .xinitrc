@@ -1,7 +1,5 @@
 nvidia-settings -a "[gpu:0]/GpuPowerMizerMode=1"
 #disable monitor 1 and use monitor 2
-#xrandr --newmode "1920x1080_120.00"  368.76  1920 2072 2288 2656  1080 1081 1084 1157  -HSync +Vsync
-#xrandr --addmode HDMI-1 "1920x1080_120.00"
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
 xrandr --output eDP-1 --off
