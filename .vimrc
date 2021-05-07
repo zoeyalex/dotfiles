@@ -30,10 +30,13 @@ set guioptions-=m
 "remove toolbar
 set guioptions-=T
 
-"remove scrollar
+"remove scrollbars
 set guioptions-=r
 set guioptions-=l
 set guioptions-=b
+set guioptions-=L
+set guioptions-=R
+
 
 "show tabs as 4 spaces
 set tabstop=4
