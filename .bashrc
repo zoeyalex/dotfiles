@@ -90,6 +90,7 @@ fi
 unset use_color safe_term match_lhs sh
 
 alias m='python ~/curses-file-manager/src/__init__.py'
+alias p='sudo pacman'                     # convenience
 alias cp='cp -ivr'                        # confirm before overwriting something
 alias diff='diff --color=auto'		      # add colors
 alias ls='ls -h --color=auto'		      # human-readable sizes
