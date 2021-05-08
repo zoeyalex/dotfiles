@@ -22,7 +22,7 @@ colorscheme space
 syntax on
 
 "change font
-set guifont=Consolas\ 14
+set guifont=Inconsolata\ 12
 
 "remove menubar
 set guioptions-=m
