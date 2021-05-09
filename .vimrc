@@ -11,12 +11,13 @@ Plug 'scrooloose/nerdtree'
 Plug 'ap/vim-css-color'
 "flake8 on F7
 Plug 'nvie/vim-flake8'
+"spacemacs
+Plug 'colepeters/spacemacs-theme.vim'
 call plug#end()
 
 let $RC="$HOME/.vimrc"
 
-"colorscheme
-colorscheme space
+colorscheme spacemacs-theme
 
 "basic syntax highlight
 syntax on
