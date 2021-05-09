@@ -6,7 +6,7 @@ xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --output eDP-1 --off --output HDMI-1 --mode 1920x1080 --rate 120.0
 
 #set wallpaper
-xwallpaper --stretch ~/Pictures/space.png
+xwallpaper --stretch ~/Pictures/darkblue_stars.jpg
 
 #keyboard
 xset r rate 300 150
