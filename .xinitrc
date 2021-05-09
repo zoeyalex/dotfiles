@@ -1,9 +1,10 @@
 #nvidia high performance
+xrandr --setprovideroutputsource modesetting NVIDIA-0
 nvidia-settings -a "[gpu:0]/GpuPowerMizerMode=1"
 
 #disable monitor 1 and use monitor 2
-xrandr --setprovideroutputsource modesetting NVIDIA-0
-xrandr --output eDP-1 --off --output HDMI-1 --mode 1920x1080 --rate 120.0
+xrandr --output eDP-1 --off --output HDMI-1 --mode 1920x1080 --rate 120.0 --preferred
+xrandr --output HDMI-1 --set "PRIME Synchronization" 1
 
 #set wallpaper
 xwallpaper --stretch ~/Pictures/darkblue_stars.jpg
