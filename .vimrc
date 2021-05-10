@@ -13,17 +13,22 @@ Plug 'ap/vim-css-color'
 Plug 'nvie/vim-flake8'
 "spacemacs
 Plug 'colepeters/spacemacs-theme.vim'
+
 call plug#end()
 
 let $RC="$HOME/.vimrc"
 
+if (has("termguicolors"))
+  set termguicolors
+endif
+set background=dark
 colorscheme spacemacs-theme
 
 "basic syntax highlight
 syntax on
 
 "change font
-set guifont=Inconsolata\ 12
+set guifont=SF\ Mono\ Medium\ 12
 
 "remove menubar
 set guioptions-=m
