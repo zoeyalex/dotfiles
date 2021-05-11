@@ -6,8 +6,11 @@ nvidia-settings -a "[gpu:0]/GpuPowerMizerMode=1"
 xrandr --output eDP-1 --off --output HDMI-1 --mode 1920x1080 --rate 120.0 --preferred
 xrandr --output HDMI-1 --set "PRIME Synchronization" 1
 
+#run composite manager in the background
+picom --config .config/picom.conf &
+
 #set wallpaper
-xwallpaper --stretch ~/Pictures/darkblue_stars.jpg
+xwallpaper --stretch ~/Pictures/lake_night.jpg
 
 #keyboard
 xset r rate 300 150
