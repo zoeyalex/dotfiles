@@ -104,6 +104,10 @@ set autoread
 "gives the ability to move your cursor with a mouse
 set mouse=a
 
+"map H, V to horizontal split, vertical split respectively
+command H sp
+command V vs
+
 "set leader to space
 nnoremap <SPACE> <Nop>
 let mapleader=" "
