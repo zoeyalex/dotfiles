@@ -7,13 +7,14 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 "file manager
 Plug 'scrooloose/nerdtree'
-"vim css colors
+"vim css color support
 Plug 'ap/vim-css-color'
 "flake8 on F7
 Plug 'nvie/vim-flake8'
-"spacemacs
+"jedi-vim
+Plug 'davidhalter/jedi-vim'
+"spacemacs theme
 Plug 'colepeters/spacemacs-theme.vim'
-
 call plug#end()
 
 let $RC="$HOME/.vimrc"
