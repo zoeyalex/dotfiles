@@ -10,7 +10,7 @@ xrandr --output HDMI-1 --set "PRIME Synchronization" 1
 picom --config .config/picom.conf &
 
 #set wallpaper
-xwallpaper --stretch ~/Pictures/lake_night.jpg
+xwallpaper --stretch ~/Pictures/mac_desert.jpg
 
 #keyboard
 xset r rate 300 150
