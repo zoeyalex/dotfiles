@@ -1,10 +1,8 @@
-#nvidia high performance
-xrandr --setprovideroutputsource modesetting NVIDIA-0
 nvidia-settings -a "[gpu:0]/GpuPowerMizerMode=1"
+nvidia-settings --assign CurrentMetaMode="nvidia-auto-select
++0+0 { ForceFullCompositionPipeline = On }"
 
-#disable monitor 1 and use monitor 2
-xrandr --output eDP-1 --off --output HDMI-1 --mode 1920x1080 --rate 120.0 --preferred
-xrandr --output HDMI-1 --set "PRIME Synchronization" 1
+xrandr --output HDMI-0 --mode 1920x1080 --rate 144.01
 
 #run composite manager in the background
 picom --config .config/picom.conf &
