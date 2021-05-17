@@ -3,8 +3,8 @@
 #
 [[ $- != *i* ]] && return
 
-export HISTSIZE=-1
-export HISTFILESIZE=-1
+HISTSIZE=10000
+HISTFILESIZE=10000
 colors() {
 	local fgc bgc vals seq0
 
