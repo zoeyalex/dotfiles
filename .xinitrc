@@ -8,17 +8,17 @@ xrandr --output HDMI-0 --mode 1920x1080 --rate 144.01
 picom --config .config/picom.conf &
 
 #set wallpaper
-xwallpaper --stretch ~/Pictures/mac_desert.jpg
+xwallpaper --stretch ~/Pictures/pastel_sun.jpg
 
 #keyboard
 xset r rate 300 150
 setxkbmap -option caps:escape
 
-#update clock every minute
+#update volume and clock every minute
 while true
 do
-    xsetroot -name "$( date +"%A %d-%m-%Y %R" )"
-    sleep 1m    # Update time every minute
+    ~/volume.sh
+    sleep 1
 done &
 
 #start dwm
