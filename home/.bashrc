@@ -34,16 +34,6 @@ colors() {
 
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 
-# Change the window title of X terminals
-case ${TERM} in
-	xterm*|rxvt*|Eterm*|aterm|kterm|gnome*|interix|konsole*)
-		PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\007"'
-		;;
-	screen*)
-		PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\033\\"'
-		;;
-esac
-
 use_color=true
 
 # Set colorful PS1 only on colorful terminals.
@@ -74,7 +64,7 @@ if ${use_color} ; then
 		PS1='\[\033[01;31m\][\h\[\033[01;36m\] \W\[\033[01;31m\]]\$\[\033[00m\] '
 	else
 
-		PS1="\[\033[01;38;5;146m\][\u@alex \[\033[01;37m\]\W\[\033[01;38;5;146m\]]\[\033[01;38;5;146m\]\$\[\033[00m\] "
+		PS1="\[\033[01;38;5;159m\][\u@alex \[\033[01;38;5;230m\]\W\[\033[01;38;5;159m\]]\[\033[01;38;5;159m\]\$\[\033[00m\] "
 	fi
 
 	alias grep='grep --colour=auto'
