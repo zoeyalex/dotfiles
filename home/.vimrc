@@ -121,6 +121,9 @@ map <C-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 nnoremap <leader>e <C-]>
 nnoremap <leader>q <C-t>
 
+"fast save on leader s
+noremap <Leader>s :update<CR>
+
 "double caps/esc to quit highlight mode
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 
