@@ -17,8 +17,9 @@ setxkbmap -option caps:escape
 #update volume and clock every minute
 while true
 do
-    ~/volume.sh
     sleep 1
+    ~/volume.sh
+    sleep 59
 done &
 
 #start dwm
