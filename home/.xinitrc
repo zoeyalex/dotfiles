@@ -18,7 +18,7 @@ setxkbmap -option caps:escape
 while true
 do
     sleep 1
-    ~/volume.sh
+    ~/.local/bin/volume.sh
     sleep 59
 done &
 
