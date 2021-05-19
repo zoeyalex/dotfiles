@@ -95,6 +95,7 @@ alias rm='rm -I'			              # prompt once before removing
 alias f='pcmanfm'			              # gui file browser
 alias vim='gvim'			              # gvim is better overall
 alias md='ghostwriter'                    # markdown editor
+alias web='firefox --new-window /home/zoey/PastelCove/src/index.html'
 export PATH="$HOME/.local/bin:$PATH"      # add /.local/bin to path
 
 xhost +local:root > /dev/null 2>&1
