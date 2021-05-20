@@ -15,21 +15,24 @@ Plug 'nvie/vim-flake8'
 Plug 'davidhalter/jedi-vim'
 "spacemacs theme
 Plug 'colepeters/spacemacs-theme.vim'
+"substrata
+Plug 'arzg/vim-substrata'
 call plug#end()
 
 let $RC="$HOME/.vimrc"
 
-if (has("termguicolors"))
-  set termguicolors
-endif
-set background=dark
-colorscheme spacemacs-theme
+"if (has("termguicolors"))
+"  set termguicolors
+"endif
+"set background=dark
+"colorscheme spacemacs-theme
+colorscheme substrata
 
 "basic syntax highlight
 syntax on
 
 "change font
-set guifont=SF\ Mono\ Medium\ 12
+"set guifont=SF\ Mono\ Medium\ 12
 
 "remove menubar
 set guioptions-=m
@@ -121,8 +124,8 @@ map <C-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 nnoremap <leader>e <C-]>
 nnoremap <leader>q <C-t>
 
-"fast save on leader s
-noremap <Leader>s :update<CR>
+"fast save on leader w
+noremap <Leader>w :update<CR>
 
 "double caps/esc to quit highlight mode
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>

@@ -64,7 +64,8 @@ if ${use_color} ; then
 		PS1='\[\033[01;31m\][\h\[\033[01;36m\] \W\[\033[01;31m\]]\$\[\033[00m\] '
 	else
 
-		PS1="\[\033[01;38;5;159m\][\u@alex \[\033[01;38;5;230m\]\W\[\033[01;38;5;159m\]]\[\033[01;38;5;159m\]\$\[\033[00m\] "
+        PS1="\[\033[00;38;5;146m\][\u@alex \[\033[00;38;5;230m\]\W\[\033[00;38;5;146m\]]\[\033[00;38;5;146m\]\033[01m\]\$\[\033[00m\] "
+	#	PS1="\[\033[01;38;5;159m\][\u@alex \[\033[01;38;5;230m\]\W\[\033[01;38;5;159m\]]\[\033[01;38;5;159m\]\$\[\033[00m\] "
 	fi
 
 	alias grep='grep --colour=auto'
@@ -93,7 +94,7 @@ alias np='nano -w PKGBUILD'
 alias more=less
 alias rm='rm -I'			              # prompt once before removing
 alias f='pcmanfm'			              # gui file browser
-alias vim='gvim'			              # gvim is better overall
+#alias vim='gvim'			              # gvim is better overall
 alias md='ghostwriter'                    # markdown editor
 alias web='firefox --new-window /home/zoey/PastelCove/src/index.html'
 export PATH="$HOME/.local/bin:$PATH"      # add /.local/bin to path
