@@ -33,7 +33,7 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 
-# Aliases
+### Aliases
 alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
@@ -51,6 +51,7 @@ alias md='ghostwriter'                    # markdown editor
 alias web='firefox --new-window /home/zoey/PastelCove/src/index.html'
 export PATH="$HOME/.local/bin:$PATH"      # add /.local/bin to path
 
+### Scripts
 # Lets you search for files and open them with vim | uses fzf
 v ()
 {
@@ -68,8 +69,14 @@ v ()
   vim $file
 }
 
+### Syntax highlight
 # Enable and tweak syntax highlighting
 source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-(( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES #
-ZSH_HIGHLIGHT_STYLES[path]=none                                   # remove directory underline
+(( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
+
+ZSH_HIGHLIGHT_STYLES[path]=none                                   # Remove directory underline
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none                            #
+
+ZSH_HIGHLIGHT_STYLES[precommand]=fg=green                         # Remove precommand underline
+
+ZSH_HIGHLIGHT_STYLES[unknown-token]=none                          # Remove error color
