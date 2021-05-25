@@ -119,7 +119,7 @@ let mapleader=" "
 "replace all occurences on S
 nnoremap S :%s//g<Left><Left>
 
-"ctags ^e to jump to definition, ^q to go back
+"ctags leader-e to jump to definition, leader-q to go back
 map <C-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 nnoremap <leader>e <C-]>
 nnoremap <leader>q <C-t>
