@@ -5,6 +5,8 @@
 call plug#begin()
 "better defaults
 Plug 'tpope/vim-sensible'
+"git integration
+Plug 'tpope/vim-fugitive'
 "file manager
 Plug 'scrooloose/nerdtree'
 "vim css color support
@@ -17,6 +19,8 @@ Plug 'davidhalter/jedi-vim'
 Plug 'colepeters/spacemacs-theme.vim'
 "substrata
 Plug 'arzg/vim-substrata'
+"^p files
+Plug 'kien/ctrlp.vim'
 call plug#end()
 
 let $RC="$HOME/.vimrc"
@@ -99,8 +103,10 @@ set nu
 "set filetype, filetype plugin and filetype indent on
 filetype plugin indent on
 
-"statusline always active
+"statusline always active and display current branch
 set laststatus=2
+set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
+
 
 "auto reload whenever file changes on disk
 set autoread
