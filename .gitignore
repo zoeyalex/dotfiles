@@ -1,5 +1,0 @@
-home/.local/bin/flake8
-home/.local/bin/pudb3
-home/.local/bin/pycodestyle
-home/.local/bin/pyflakes
-home/.local/bin/pygmentize
