@@ -14,11 +14,11 @@ xwallpaper --stretch ~/Pictures/1c1c1c.jpg
 xset r rate 300 90
 setxkbmap -option caps:escape
 
-#update volume and clock every minute
+#update status
 while true
 do
     sleep 1
-    ~/.local/bin/volume.sh
+    ~/.local/bin/status/status.sh
     sleep 59
 done &
 
