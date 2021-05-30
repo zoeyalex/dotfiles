@@ -133,6 +133,8 @@ nnoremap <leader>q <C-t>
 "fast save on leader w
 noremap <Leader>w :update<CR>
 
+noremap <Leader>r :w !doas tee %<CR>
+
 "double caps/esc to quit highlight mode
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 
