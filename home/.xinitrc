@@ -1,6 +1,5 @@
 nvidia-settings -a "[gpu:0]/GpuPowerMizerMode=1"
-nvidia-settings --assign CurrentMetaMode="nvidia-auto-select
-+0+0 { ForceFullCompositionPipeline = On }"
+nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
 
 xrandr --output HDMI-0 --mode 1920x1080 --rate 144.01
 
