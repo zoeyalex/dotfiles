@@ -2,13 +2,13 @@
 
 set -e
 
-VOLUME_STR=`pamixer --get-volume-human`
-VOLUME_INT=$(echo ${VOLUME_STR} | tr -d -c 0-9)
+MUTE=`pulsemixer --get-mute`
+VOLUME_INT="$(echo `pulsemixer --get-volume` | grep -o "\s[0-9][0-9]\?")"
 
-if  grep -q "muted" <<< $VOLUME_STR || (($VOLUME_INT == 0)); then
+if  (($MUTE == 1)) || (($VOLUME_INT == 0)) ; then
     VOLUME="  0%"
 elif (($VOLUME_INT <= 50)); then
-    VOLUME="  ${VOLUME_STR}"
+    VOLUME=" ${VOLUME_INT}%"
 else
-    VOLUME="  ${VOLUME_STR}"
+    VOLUME=" ${VOLUME_INT}%"
 fi
