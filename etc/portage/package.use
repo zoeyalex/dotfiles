@@ -1,0 +1,8 @@
+app-text/poppler qt5
+sys-boot/grub mount
+media-libs/libaom -cpu_flags_x86_sse2
+media-libs/libaom -cpu_flags_x86_ssse3
+app-text/poppler cairo
+media-libs/gegl cairo
+x11-libs/libfm gtk
+app-editors/vim python terminal
