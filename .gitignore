@@ -1,5 +1,5 @@
-flake8
 pudb3
 pycodestyle
 pyflakes
 pygmentize
+flake8
