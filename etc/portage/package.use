@@ -6,3 +6,4 @@ app-text/poppler cairo
 media-libs/gegl cairo
 x11-libs/libfm gtk
 app-editors/vim python terminal
+dev-libs/xmlsec nss
