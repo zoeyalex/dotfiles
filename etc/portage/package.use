@@ -5,5 +5,8 @@ media-libs/libaom -cpu_flags_x86_ssse3
 app-text/poppler cairo
 media-libs/gegl cairo
 x11-libs/libfm gtk
-app-editors/vim python terminal
 dev-libs/xmlsec nss
+app-editors/vim python terminal
+app-editors/emacs xft png jpeg
+x11-misc/xwallpaper jpeg png xpm
+dev-python/PyQt5 printsupport network multimedia webchannel
