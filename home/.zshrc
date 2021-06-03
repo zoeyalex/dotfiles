@@ -38,7 +38,6 @@ alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
 alias m='python ~/curses-file-manager/src/__init__.py'
-alias p='sudo pacman'                     # convenience
 alias c='clear'                           # clears the display
 alias cp='cp -ivr'                        # confirm before overwriting something
 alias diff='diff --color=auto'		      # add colors
@@ -47,9 +46,12 @@ alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias rm='rm -I'			              # prompt once before removing
 alias f='pcmanfm'			              # gui file browser
-alias md='ghostwriter'                    # markdown editor
 alias web='firefox --new-window /home/zoey/PastelCove/src/index.html'
+alias reboot='doas reboot'
+alias poweroff='doas poweroff'
+alias emerge='doas emerge'
 export PATH="$HOME/.local/bin:$PATH"      # add /.local/bin to path
+export PATH=~/.emacs.d/bin:$PATH
 
 ### Scripts
 # Lets you search for files and open them with vim | uses fzf
