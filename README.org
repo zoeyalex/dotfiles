@@ -1,0 +1,7 @@
+#+TITLE: =/home/zoey=
+if you decide to use the provided install script:
+  - make sure it is located in the dotfiles directory
+  - run install.sh e.g.
+  #+BEGIN_SRC shell
+  ./install.sh
+  #+END_SRC
