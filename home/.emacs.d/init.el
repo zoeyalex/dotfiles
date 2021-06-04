@@ -10,12 +10,14 @@
 (setq visible-bell t)
 
 ;; Change default font, theme
-(set-face-attribute 'default nil :font "Tamzen-11")
+(set-face-attribute 'default nil :font "SourceCodePro-10")
 (load-theme 'dracula t)
-
 
 ;; Make ESC quit prompts
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+
+;; Disable line wrapping
+(set-default 'truncate-lines t)
 
 ;; Initialize package manager
 (require 'package)
@@ -68,23 +70,31 @@
   (ivy-mode 1))
 (use-package counsel
   :bind (("M-x" . counsel-M-x)
-	 ("C-x b" . counsel-ibuffer)
+	 ("C-x b" . counsel-switch-buffer)
 	 ("C-x C-f" . counsel-find-file))
   :config
-  (setq ivy-initial-inputs-alist nil))
+  (setq ivy-initial-inputs-alist nil)) ;; Don't start searches with ^
+
+(use-package general
+  :config
+  (general-create-definer zoey/leader-keys
+    :keymaps '(normal insert visual emacs)
+    :prefix "SPC"
+    :global-prefix "C-SPC")
+  (zoey/leader-keys
+    "t"  '(:ignore t :which-key "toggles")
+    "tt" '(counsel-load-theme :which-key "choose theme")))
 
 ;; Customize modeline and provide icon fonts
 (use-package all-the-icons)
 (use-package doom-modeline
-  :ensure t
   :init (doom-modeline-mode 1)
   :custom ((doom-modeline-height 15)))
 
 ;; Package that makes creating themes easier
-(use-package autothemer
-  :ensure t)
+(use-package autothemer)
 
-;; highligh hex, string colors etc.
+;; Highlight hex, string colors etc.
 (use-package rainbow-mode
   :hook (prog-mode . rainbow-mode ))
 
@@ -100,13 +110,16 @@
   :init
   (ivy-rich-mode 1))
 
+;; Colour the same brackets
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
+
 ;; Emojis 😳
 (use-package emojify
   :hook (after-init . global-emojify-mode))
 
 ;; Customize starting screen
 (use-package dashboard
-    :ensure t
     :diminish dashboard-mode
     :config
     (setq dashboard-banner-logo-title "hewwo uwu, he do be t-posing tho 😳")
@@ -118,3 +131,43 @@
 ;; Use .custom.el for custom-set-variables
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
+
+;; Better help interface
+(use-package helpful
+  :custom
+  (counsel-describe-function-function #'helpful-callable)
+  (counsel-describe-variable-function #'helpful-variable)
+  :bind
+  ([remap describe-function] . counsel-describe-function)
+  ([remap describe-command] . helpful-command)
+  ([remap describe-variable] . counsel-describe-variable)
+  ([remap describe-key] . helpful-key))
+
+;; Set up evil keybindings
+(use-package evil
+  :init
+  (setq evil-want-integration t)
+  (setq evil-want-keybinding nil)
+  (setq evil-want-C-u-scroll t)
+  (setq evil-want-C-i-jump nil)
+  :config
+  (evil-mode 1)
+  (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
+  (define-key evil-insert-state-map (kbd "C-h") 'evil-delete-backward-char-and-join)
+  ;; Use visual line motions even outside of visual-line-mode buffers
+  (evil-global-set-key 'motion "j" 'evil-next-visual-line)
+  (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
+  ;; 
+  (evil-set-initial-state 'messages-buffer-mode 'normal)
+  (evil-set-initial-state 'dashboard-mode 'normal)
+  ;; Vim-like history and redo
+  (global-undo-tree-mode)
+  (evil-set-undo-system 'undo-tree))
+(require 'goto-chg)
+(global-set-key [(control ?.)] 'goto-last-change)
+(global-set-key [(control ?,)] 'goto-last-change-reverse)
+;; Disable evil in certain modes
+(use-package evil-collection
+  :after evil
+  :config
+  (evil-collection-init))
