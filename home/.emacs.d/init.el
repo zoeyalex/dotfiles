@@ -74,6 +74,9 @@
 	 ("C-x C-f" . counsel-find-file))
   :config
   (setq ivy-initial-inputs-alist nil)) ;; Don't start searches with ^
+(defun sufind ()
+  (interactive)
+  (counsel-find-file "/su::/"))
 
 (use-package general
   :config
@@ -83,7 +86,19 @@
     :global-prefix "C-SPC")
   (zoey/leader-keys
     "t"  '(:ignore t :which-key "toggles")
-    "tt" '(counsel-load-theme :which-key "choose theme")))
+    "h"  '(:ignore t :which-key "help")
+    "f"  '(:ignore t :which-key "file")
+    "b"  '(:ignore t :which-key "buffer")
+    "tt" '(counsel-load-theme :which-key "choose theme")
+    "ts" '(hydra-text-scale/body :which-key "scale text")
+    "hk" '(describe-key :which-key "describe key")
+    "hf" '(describe-function :which-key "describe function")
+    "fn" '(make-empty-file :which-key "create file")
+    "fe" '(counsel-find-file :which-key "edit file")
+    "fr" '(sufind :which-key "open as root")
+    "bs" '(counsel-switch-buffer :which-key "switch buffer")
+    "be" '(eval-buffer :which-key "eval buffer")
+    "bw" '(save-buffer :which-key "buffer write")))
 
 ;; Customize modeline and provide icon fonts
 (use-package all-the-icons)
@@ -171,3 +186,11 @@
   :after evil
   :config
   (evil-collection-init))
+
+(use-package hydra)
+
+(defhydra hydra-text-scale (:timeout 4)
+  "scale text"
+  ("j" text-scale-increase "in")
+  ("k" text-scale-decrease "out")
+  ("f" nil "finished" :exit t))
