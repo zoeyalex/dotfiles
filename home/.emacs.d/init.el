@@ -1,5 +1,5 @@
 ;; Disable junk
-(setq inhibit-startup-message t)
+;;(setq inhibit-startup-message t)
 (scroll-bar-mode -1)        ; Disable visible scrollbar
 (tool-bar-mode -1)          ; Disable the toolbar
 (tooltip-mode -1)           ; Disable tooltips
@@ -11,7 +11,7 @@
 
 ;; Change default font, theme
 (set-face-attribute 'default nil :font "Tamzen-11")
-(load-theme 'space t)
+(load-theme 'dracula t)
 
 
 ;; Make ESC quit prompts
@@ -39,6 +39,7 @@
 ;; Disable line numbers for some modes
 (dolist (mode '(org-mode-hook
 		term-mode-hook
+		shell-mode-hook
 		eshell-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
@@ -65,8 +66,12 @@
          ("C-d" . ivy-reverse-i-search-kill))
   :config
   (ivy-mode 1))
-(global-set-key (kbd "M-x") 'counsel-M-x)
-(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(use-package counsel
+  :bind (("M-x" . counsel-M-x)
+	 ("C-x b" . counsel-ibuffer)
+	 ("C-x C-f" . counsel-find-file))
+  :config
+  (setq ivy-initial-inputs-alist nil))
 
 ;; Customize modeline and provide icon fonts
 (use-package all-the-icons)
@@ -82,6 +87,33 @@
 ;; highligh hex, string colors etc.
 (use-package rainbow-mode
   :hook (prog-mode . rainbow-mode ))
+
+;; C-x C-h etc... command helper
+(use-package which-key
+  :init (which-key-mode)
+  :diminish which-key-mode
+  :config
+  (setq which-key-idle-delay 0))
+
+;; M-x command helper
+(use-package ivy-rich
+  :init
+  (ivy-rich-mode 1))
+
+;; Emojis 😳
+(use-package emojify
+  :hook (after-init . global-emojify-mode))
+
+;; Customize starting screen
+(use-package dashboard
+    :ensure t
+    :diminish dashboard-mode
+    :config
+    (setq dashboard-banner-logo-title "hewwo uwu, he do be t-posing tho 😳")
+    (setq dashboard-startup-banner "/home/zoey/Pictures/uwu_pose.png")
+    (setq dashboard-items '((recents  . 10)
+                            (bookmarks . 10)))
+    (dashboard-setup-startup-hook))
 
 ;; Use .custom.el for custom-set-variables
 (setq custom-file "~/.emacs.d/custom.el")
