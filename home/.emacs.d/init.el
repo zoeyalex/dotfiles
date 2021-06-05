@@ -1,4 +1,4 @@
-;; Disable junk
+; Disable junk
 ;;(setq inhibit-startup-message t)
 (scroll-bar-mode -1)        ; Disable visible scrollbar
 (tool-bar-mode -1)          ; Disable the toolbar
@@ -6,8 +6,8 @@
 (set-fringe-mode 10)        ; Give some breathing room
 (menu-bar-mode -1)          ; Disable the menu bar
 
-;; Set up the visible bell
-(setq visible-bell t)
+;; Remove screen flashing top/bottom line
+(setq visible-bell nil)
 
 ;; Change default font, theme
 (set-face-attribute 'default nil :font "SourceCodePro-10")
@@ -50,6 +50,8 @@
 (require 'elcord)
 (elcord-mode)
 
+(add-hook 'python-mode-hook 'lsp)
+
 ;; Set up ivy/counsel and bind fuzzy find globally
 (use-package ivy
   :diminish
@@ -78,6 +80,11 @@
   (interactive)
   (counsel-find-file "/su::/"))
 
+
+(defun subs ()
+  (interactive)
+  (evil-ex "%s//"))
+
 (use-package general
   :config
   (general-create-definer zoey/leader-keys
@@ -85,20 +92,29 @@
     :prefix "SPC"
     :global-prefix "C-SPC")
   (zoey/leader-keys
-    "t"  '(:ignore t :which-key "toggles")
-    "h"  '(:ignore t :which-key "help")
-    "f"  '(:ignore t :which-key "file")
-    "b"  '(:ignore t :which-key "buffer")
-    "tt" '(counsel-load-theme :which-key "choose theme")
-    "ts" '(hydra-text-scale/body :which-key "scale text")
-    "hk" '(describe-key :which-key "describe key")
-    "hf" '(describe-function :which-key "describe function")
-    "fn" '(make-empty-file :which-key "create file")
-    "fe" '(counsel-find-file :which-key "edit file")
-    "fr" '(sufind :which-key "open as root")
-    "bs" '(counsel-switch-buffer :which-key "switch buffer")
-    "be" '(eval-buffer :which-key "eval buffer")
-    "bw" '(save-buffer :which-key "buffer write")))
+
+    "b"   '(:ignore t :which-key "buffer")
+    "bk"  '(:ignore t :which-key "kill buffer")
+    "f"   '(:ignore t :which-key "file")
+    "h"   '(:ignore t :which-key "help")
+    "t"   '(:ignore t :which-key "toggles")
+    "s"   '(subs :which-key "substitute")
+    "e"   '(xref-find-definitions :which-key "jump to def")
+    "q"   '(xref-pop-marker-stack :which-key "go back")
+    "tt"  '(counsel-load-theme :which-key "choose theme")
+    "ts"  '(hydra-text-scale/body :which-key "scale text")
+    "hf"  '(describe-function :which-key "describe function")
+    "hk"  '(describe-key :which-key "describe key")
+    "hp"  '(describe-package :which-key "describe package")
+    "fn"  '(make-empty-file :which-key "create file")
+    "fe"  '(counsel-find-file :which-key "edit file")
+    "fr"  '(sufind :which-key "open as root")
+    "be"  '(eval-buffer :which-key "eval buffer")
+    "br"  '(revert-buffer :which-key "revert buffer") 
+    "bs"  '(counsel-switch-buffer :which-key "switch buffer")
+    "bw"  '(save-buffer :which-key "buffer write")
+    "bkc" '(kill-current-buffer :which-key "kill current buffer")
+    "bks" '(kill-buffer :which-key "kill a buffer")))
 
 ;; Customize modeline and provide icon fonts
 (use-package all-the-icons)
@@ -133,14 +149,23 @@
 (use-package emojify
   :hook (after-init . global-emojify-mode))
 
+(use-package projectile
+  :config
+  (projectile-mode +1)) 
+
 ;; Customize starting screen
 (use-package dashboard
     :diminish dashboard-mode
     :config
     (setq dashboard-banner-logo-title "hewwo uwu, he do be t-posing tho 😳")
     (setq dashboard-startup-banner "/home/zoey/Pictures/uwu_pose.png")
-    (setq dashboard-items '((recents  . 10)
-                            (bookmarks . 10)))
+    (setq dashboard-center-content t)
+    (setq dashboard-set-heading-icons t)
+    (setq dashboard-set-file-icons t)
+    (setq dashboard-projects-backend 'projectile)
+    (setq dashboard-items '((projects  . 5)
+                            (bookmarks . 5)
+			    (recents . 5)))
     (dashboard-setup-startup-hook))
 
 ;; Use .custom.el for custom-set-variables
@@ -165,6 +190,7 @@
   (setq evil-want-keybinding nil)
   (setq evil-want-C-u-scroll t)
   (setq evil-want-C-i-jump nil)
+  (setq evil-ex-substitute-global t)
   :config
   (evil-mode 1)
   (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
@@ -177,7 +203,9 @@
   (evil-set-initial-state 'dashboard-mode 'normal)
   ;; Vim-like history and redo
   (global-undo-tree-mode)
-  (evil-set-undo-system 'undo-tree))
+  (evil-set-undo-system 'undo-tree)
+  ;; Remap Z-Q to force quit
+  (define-key evil-normal-state-map (kbd "ZQ") 'evil-quit-all-with-error-code))
 (require 'goto-chg)
 (global-set-key [(control ?.)] 'goto-last-change)
 (global-set-key [(control ?,)] 'goto-last-change-reverse)
