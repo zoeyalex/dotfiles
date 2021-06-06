@@ -10,3 +10,5 @@ app-editors/vim python terminal
 app-editors/emacs xft png jpeg libxml2 json
 x11-misc/xwallpaper jpeg png xpm
 dev-python/PyQt5 printsupport network multimedia webchannel
+www-client/w3m fbcon imlib
+sys-kernel/gentoo-sources symlink 
