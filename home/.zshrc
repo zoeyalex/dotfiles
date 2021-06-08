@@ -7,9 +7,9 @@ setopt autocd		# Automatically cd into typed directory.
 unsetopt beep       # Disable beep
 stty stop undef		# Disable ctrl-s to freeze terminal.
 
-### Prompt
+### Prompt %{$type[color]%} where type = fg/bg and color = red/green/blue/...
 autoload -U colors && colors	# Load colors
-PS1='$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[red]%}%M %{$fg[green]%}%c$(git_branch_name)%{$fg[red]%}]%{$reset_color%}$ '
+PS1='%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[red]%}%M %{$fg[green]%}%c$(git_branch_name)%{$fg[red]%}]%{$reset_color%}$ '
 setopt prompt_subst
 
 
@@ -54,6 +54,7 @@ alias reboot='doas reboot'
 alias poweroff='doas poweroff'
 alias emerge='doas emerge'
 alias emacs='emacs --no-splash'
+alias ping='ping -c 3 gnu.org'
 export PATH="$HOME/.local/bin:$PATH"      # add /.local/bin to path
 export PATH=~/.emacs.d/bin:$PATH
 
