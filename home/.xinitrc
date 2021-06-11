@@ -7,19 +7,19 @@ xrandr --output HDMI-0 --mode 1920x1080 --rate 144.01
 picom --config .config/picom.conf &
 
 #set wallpaper
-xwallpaper --stretch ~/Pictures/neon_tree.png
-
-#keyboard
-xset r rate 300 90
-setxkbmap -option caps:escape
+xwallpaper --stretch ~/Pictures/bit_night.jpg
 
 #update status
 while true
 do
     sleep 1
-    ~/.local/bin/status/status.sh
+    sh /home/zoey/.local/bin/status/status.sh
     sleep 59
 done &
+
+#keyboard
+xset r rate 300 90
+setxkbmap -option caps:escape
 
 #start dwm
 exec dbus-launch dwm
