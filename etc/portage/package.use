@@ -16,8 +16,6 @@ app-editors/gvim gtk gtk2
 media-gfx/imagemagick jpeg jpeg2k webp
 sys-fs/ntfs3g ntfsprogs
 app-admin/keepassxc autotype browser
-dev-libs/gjs gtk examples
-gui-libs/libhandy gtk examples
 
 
 # auto generated use flags
