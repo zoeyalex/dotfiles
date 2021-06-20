@@ -7,7 +7,7 @@ xrandr --output HDMI-0 --mode 1920x1080 --rate 144.01
 picom --config .config/picom.conf &
 
 #set wallpaper
-xwallpaper --stretch ~/Pictures/bit_night.jpg
+xwallpaper --center ~/Pictures/lain_right.png
 
 #update status
 while true
