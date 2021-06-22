@@ -14,7 +14,6 @@ sys-kernel/gentoo-sources symlink
 mail-client/mutt imap lmdb ssl gnutls smtp
 app-editors/gvim gtk gtk2
 media-gfx/imagemagick jpeg jpeg2k webp
-sys-fs/ntfs3g ntfsprogs
 app-admin/keepassxc autotype browser
 
 
