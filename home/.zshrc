@@ -9,7 +9,8 @@ stty stop undef		# Disable ctrl-s to freeze terminal.
 
 ### Prompt %{$type[color]%} where type = fg/bg and color = red/green/blue/...
 autoload -U colors && colors	# Load colors
-PS1='%{$fg[yellow]%}[%{$fg[magenta]%}%n%{$fg[white]%}@%{$fg[blue]%}%M %{$fg[white]%}%c$(git_branch_name)%{$fg[yellow]%}]%{$reset_color%}$ '
+#PS1='%{$fg[yellow]%}[%{$fg[magenta]%}%n%{$fg[white]%}@%{$fg[blue]%}%M %{$fg[white]%}%c$(git_branch_name)%{$fg[yellow]%}]%{$reset_color%}$ '
+PS1='%{$fg[blue]%}%c $(git_branch_name) >> %{$reset_color%}'
 setopt prompt_subst
 
 
@@ -48,7 +49,7 @@ alias ls='ls -h --color=auto'		      # human-readable sizes
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias rm='rm -I'			              # prompt once before removing
-alias f='pcmanfm'			              # gui file browser
+alias f='ranger'			              # file browser
 alias web='firefox --new-window /home/zoey/PastelCove/src/index.html'
 alias reboot='doas reboot'
 alias poweroff='doas poweroff'
@@ -56,8 +57,10 @@ alias emerge='doas emerge'
 alias emacs='emacs --no-splash'
 alias ping='ping -c 3 gnu.org'
 alias neofetch='neofetch --source ~/cat.txt'
+alias mocp='mocp -T /usr/share/moc/themes/black_theme'
 export PATH="$HOME/.local/bin:$PATH"      # add /.local/bin to path
 export PATH=~/.emacs.d/bin:$PATH
+export PATH=~/.local/bin/status:$PATH
 
 
 ### Scripts
@@ -105,7 +108,7 @@ source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ZSH_HIGHLIGHT_STYLES[default]=none
 ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=009
-ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=009,standout
+ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=009
 ZSH_HIGHLIGHT_STYLES[alias]=fg=white,bold
 ZSH_HIGHLIGHT_STYLES[builtin]=fg=white,bold
 ZSH_HIGHLIGHT_STYLES[function]=fg=white,bold

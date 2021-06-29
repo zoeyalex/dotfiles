@@ -17,26 +17,14 @@ Plug 'nvie/vim-flake8'
 Plug 'davidhalter/jedi-vim'
 "spacemacs theme
 Plug 'colepeters/spacemacs-theme.vim'
-"substrata
-Plug 'arzg/vim-substrata'
 "^p files
 Plug 'kien/ctrlp.vim'
 call plug#end()
 
 let $RC="$HOME/.vimrc"
 
-"if (has("termguicolors"))
-"  set termguicolors
-"endif
-"set background=dark
-"colorscheme spacemacs-theme
-colorscheme substrata
-
 "basic syntax highlight
 syntax on
-
-"change font
-"set guifont=SF\ Mono\ Medium\ 12
 
 "remove menubar
 set guioptions-=m
@@ -134,6 +122,9 @@ nnoremap <leader>q <C-t>
 noremap <Leader>w :update<CR>
 
 noremap <Leader>r :w !doas tee %<CR>
+
+" remap q to quit
+noremap q ZQ
 
 "double caps/esc to quit highlight mode
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
