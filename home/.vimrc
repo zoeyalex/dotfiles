@@ -22,6 +22,7 @@ Plug 'kien/ctrlp.vim'
 call plug#end()
 
 let $RC="$HOME/.vimrc"
+colorscheme darkblue
 
 "basic syntax highlight
 syntax on
