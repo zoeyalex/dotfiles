@@ -6,3 +6,4 @@ if you decide to use the provided install script:
   #+BEGIN_SRC shell
   ./install.sh
   #+END_SRC
+** my suckless program configs are available in my public repositories.
