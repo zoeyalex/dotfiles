@@ -50,16 +50,18 @@ alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias rm='rm -I'			              # prompt once before removing
 alias f='ranger'			              # file browser
-alias web='firefox --new-window /home/zoey/PastelCove/src/index.html'
 alias reboot='doas reboot'
 alias poweroff='doas poweroff'
-alias emerge='doas emerge'
+alias emerge='doas emerge -av'
 alias emacs='emacs --no-splash'
 alias ping='ping -c 3 gnu.org'
 alias mocp='mocp -T /usr/share/moc/themes/black_theme'
-export PATH="$HOME/.local/bin:$PATH"      # add /.local/bin to path
+
+
+### PATH
 export PATH=~/.emacs.d/bin:$PATH
 export PATH=~/.local/bin/status:$PATH
+export PATH="$HOME/.local/bin:$PATH"
 
 
 ### Scripts

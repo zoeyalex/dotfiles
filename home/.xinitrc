@@ -7,14 +7,13 @@ xrandr --output HDMI-0 --mode 1920x1080 --rate 144.01
 picom --config .config/picom.conf &
 
 #set wallpaper
-xwallpaper --center ~/Pictures/lain_right.png
+xwallpaper --center ~/Pictures/ching_anime_purple.jpg
 
 #update status
 while true
 do
-    sleep 1
-    sh /home/zoey/.local/bin/status/status.sh
-    sleep 59
+    sh ~/status/status.sh
+    sleep 60
 done &
 
 #keyboard
