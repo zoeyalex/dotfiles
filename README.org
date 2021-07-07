@@ -1,5 +1,5 @@
 #+TITLE: =/home/zoey=
-[[/img/current.png]]
+[[/img/pastel.png]]
 if you decide to use the provided install script:
   - make sure it is located in the dotfiles directory
   - run install.sh e.g.
