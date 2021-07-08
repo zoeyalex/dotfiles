@@ -4,5 +4,5 @@ CHARGING=`apm -m`
 if [ $CHARGING = "unknown" ]; then
     BATTERY="charging"
 else
-    BATTERY="$(apm | grep -Eo "[0-9][0-9]?[0-9]?\%") ${CHARGING}m "
+    BATTERY="$(apm | grep -oE "[0-9]{1,3}\%") ${CHARGING}m "
 fi
