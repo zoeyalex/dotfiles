@@ -10,7 +10,7 @@ stty stop undef		# Disable ctrl-s to freeze terminal.
 ### Prompt %{$type[color]%} where type = fg/bg and color = red/green/blue/...
 autoload -U colors && colors	# Load colors
 #PS1='%{$fg[yellow]%}[%{$fg[magenta]%}%n%{$fg[white]%}@%{$fg[blue]%}%M %{$fg[white]%}%c$(git_branch_name)%{$fg[yellow]%}]%{$reset_color%}$ '
-PS1='%{$fg[red]%}%c $(git_branch_name) >> %{$reset_color%}'
+PS1='%{$fg[greed]%}%c $(git_branch_name) >> %{$reset_color%}'
 setopt prompt_subst
 
 
@@ -56,6 +56,7 @@ alias emerge='doas emerge -av'
 alias emacs='emacs --no-splash'
 alias ping='ping -c 3 gnu.org'
 alias mocp='mocp -T /usr/share/moc/themes/black_theme'
+alias bar='status.sh'
 
 
 ### PATH
