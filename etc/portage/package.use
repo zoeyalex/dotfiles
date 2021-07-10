@@ -7,7 +7,7 @@ app-text/poppler cairo
 media-libs/gegl cairo
 x11-libs/libfm gtk
 app-editors/vim python terminal
-app-editors/emacs xft png jpeg libxml2 json
+app-editors/emacs xft png jpeg libxml2 json gui
 x11-misc/xwallpaper jpeg png xpm
 dev-python/PyQt5 printsupport network multimedia webchannel
 sys-kernel/gentoo-sources symlink 
@@ -15,6 +15,8 @@ mail-client/mutt imap lmdb ssl gnutls smtp
 app-editors/gvim gtk gtk2
 media-gfx/imagemagick jpeg jpeg2k webp xml svg
 app-admin/keepassxc autotype browser
+sys-process/htop lm-sensors
+media-libs/mesa lm-sensors vulkan
 
 
 # auto generated use flags
@@ -162,3 +164,9 @@ app-text/texlive context graphics extra png xml
 # required by x11-terms/cool-retro-term-1.1.1-r2::gentoo
 # required by cool-retro-term (argument)
 >=dev-qt/qtdeclarative-5.15.2 localstorage
+# required by x11-libs/pango-1.48.7::gentoo
+# required by dev-qt/qtwidgets-5.15.2::gentoo[gtk]
+# required by app-admin/keepassxc-2.6.6::gentoo
+# required by @selected
+# required by @world (argument)
+>=media-libs/freetype-2.10.4 harfbuzz
