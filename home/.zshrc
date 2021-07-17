@@ -10,7 +10,7 @@ stty stop undef		# Disable ctrl-s to freeze terminal.
 ### Prompt %{$type[color]%} where type = fg/bg and color = red/green/blue/...
 autoload -U colors && colors	# Load colors
 #PS1='%{$fg[yellow]%}[%{$fg[magenta]%}%n%{$fg[white]%}@%{$fg[blue]%}%M %{$fg[white]%}%c$(git_branch_name)%{$fg[yellow]%}]%{$reset_color%}$ '
-PS1='%{$fg[greed]%}%c $(git_branch_name) >> %{$reset_color%}'
+PS1='%1~ $(git_branch_name) >> '
 setopt prompt_subst
 
 
@@ -57,6 +57,7 @@ alias emacs='emacs --no-splash'
 alias ping='ping -c 3 gnu.org'
 alias mocp='mocp -T /usr/share/moc/themes/black_theme'
 alias bar='status.sh'
+alias ytfzf='ytfzf -t'
 
 
 ### PATH
@@ -110,15 +111,15 @@ source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ZSH_HIGHLIGHT_STYLES[default]=none
 ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=009
-ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=009
+ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=002
 ZSH_HIGHLIGHT_STYLES[alias]=fg=white,bold
 ZSH_HIGHLIGHT_STYLES[builtin]=fg=white,bold
 ZSH_HIGHLIGHT_STYLES[function]=fg=white,bold
 ZSH_HIGHLIGHT_STYLES[command]=fg=white,bold
 ZSH_HIGHLIGHT_STYLES[precommand]=fg=magenta
 ZSH_HIGHLIGHT_STYLES[commandseparator]=none
-ZSH_HIGHLIGHT_STYLES[hashed-command]=fg=009
-ZSH_HIGHLIGHT_STYLES[path]=fg=009
+ZSH_HIGHLIGHT_STYLES[hashed-command]=fg=002
+ZSH_HIGHLIGHT_STYLES[path]=fg=003
 ZSH_HIGHLIGHT_STYLES[globbing]=fg=063
 ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=magenta
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=none
