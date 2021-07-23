@@ -1,0 +1,11 @@
+gtk-can-change-accels = 1
+
+gtk-icon-theme-name = "HighContrast"
+gtk-theme-name = "HighContrast"
+
+style "user-font"
+{
+        font_name="AcPlusIBMBIOS 12"
+}
+widget_class "*" style "user-font"
+gtk-font-name = "AcPlusIBMBIOS 12"
