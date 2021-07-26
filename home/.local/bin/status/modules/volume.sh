@@ -2,11 +2,9 @@
 
 set -x
 
-MUTE=`pulsemixer --get-mute`
-VOLUME_INT="$(echo `pulsemixer --get-volume` | grep -oE "\s[0-9]{1,3}")"
-
-if  [ $MUTE -eq 1 ] -o [ $VOLUME_INT -eq 0 ] ; then
+MUTE=`pactl list sinks | awk '/Mute/ { print $2 }'`
+if  [ $MUTE = "yes" ]; then
     VOLUME=" 0%"
 else
-    VOLUME="${VOLUME_INT}%"
+    VOLUME=" $(amixer sget Master | grep -Eom1 "[0-9]{1,3}%")"
 fi
