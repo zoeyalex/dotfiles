@@ -8,7 +8,7 @@ TIME="$(date +"%a %d/%m %R")"
 
 
 ping -c1 -q google.com &>/dev/null
-if (($? == 0)); then
+if [ $? -eq 0 ]; then
     . $SCRIPT_PATH/modules/weather.sh
 else
     WEATHER="N/A"
