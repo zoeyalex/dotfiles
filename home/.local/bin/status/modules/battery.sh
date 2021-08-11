@@ -1,8 +1,9 @@
 #!/bin/sh
 #OpenBSD battery status bar script
-CHARGING=`apm -m`
-if [ $CHARGING = "unknown" ]; then
-    BATTERY="charging"
+ESTIMATED=`apm -m`
+PERCENTAGE=`apm -l`
+if [ $ESTIMATED = "unknown" ]; then
+    BATTERY="${PERCENTAGE}% charging"
 else
-    BATTERY="$(apm -l)% ${CHARGING}m "
+    BATTERY="${PERCENTAGE}% ${ESTIMATED}m"
 fi
